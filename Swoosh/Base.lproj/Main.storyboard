@@ -128,7 +128,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-ZC-o1o" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-ZC-o1o" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="646" width="374" height="58"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69487272349999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -156,6 +156,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Mens"/>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="8ir-H6-nKg" eventType="touchUpInside" id="zxj-sI-nHK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAh-wl-Nzi" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="374" height="58"/>
@@ -167,6 +170,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Womens"/>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="8ir-H6-nKg" eventType="touchUpInside" id="wwl-Kn-bOb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRR-kB-zZz" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155.99999999999997" width="374" height="58"/>
@@ -178,6 +184,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Co-eds"/>
+                                        <connections>
+                                            <action selector="onCoedTapped:" destination="8ir-H6-nKg" eventType="touchUpInside" id="WFl-gS-fRL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -218,6 +227,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kl8-AN-hvV"/>
                     <connections>
+                        <outlet property="nextBtn" destination="aj5-ZC-o1o" id="Kvb-Vx-M7k"/>
                         <segue destination="Bb8-UX-UKR" kind="presentation" identifier="skillVCSegue" modalPresentationStyle="fullScreen" id="BqX-Vj-Eh1"/>
                     </connections>
                 </viewController>
@@ -237,8 +247,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="9C0-O3-sVB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-f8-WLP">
-                                <rect key="frame" x="181.66666666666666" y="79" width="51" height="23.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-f8-WLP">
+                                <rect key="frame" x="186" y="79" width="42" height="23.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="Rmo-67-jS3"/>
                                 </constraints>
@@ -254,7 +264,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-fX-8LN">
                                 <rect key="frame" x="147.66666666666666" y="11" width="118.99999999999997" height="20"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0l-Oe-zpU" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0l-Oe-zpU" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="646" width="374" height="58"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69487272349999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -264,6 +274,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="FINISH"/>
+                                <connections>
+                                    <action selector="onFinishTapped:" destination="Bb8-UX-UKR" eventType="touchUpInside" id="lPP-LD-I7D"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5av-Wl-Z8J">
                                 <rect key="frame" x="20" y="168.33333333333334" width="374" height="58"/>
@@ -279,6 +292,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Beginner"/>
+                                        <connections>
+                                            <action selector="onBeginnerTapped:" destination="Bb8-UX-UKR" eventType="touchUpInside" id="kfF-8i-zX3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ule-at-fgy" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="202" y="0.0" width="172" height="58"/>
@@ -290,6 +306,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Baller"/>
+                                        <connections>
+                                            <action selector="onBallerTapped:" destination="Bb8-UX-UKR" eventType="touchUpInside" id="8jg-Xr-cA4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -314,6 +333,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VO0-rA-knJ"/>
+                    <connections>
+                        <outlet property="finishBtn" destination="s0l-Oe-zpU" id="mOv-DD-54y"/>
+                        <outlet property="iamLbl" destination="UPf-f8-WLP" id="zHO-hq-Rhk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhy-qi-aif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
